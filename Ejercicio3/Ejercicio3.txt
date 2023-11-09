@@ -1,0 +1,32 @@
+La consulta seleccionará hasta un máximo de 10 filas de la tabla debido a la cláusula LIMIT que se establece en 10. Por lo tanto, la respuesta correcta es 10.
+
+
+ -- Inicio del bloque PL/SQL
+DECLARE
+  -- Declaración de un cursor llamado "exp_cur" para recuperar nombres de la tabla "employees"
+  CURSOR exp_cur IS
+    SELECT first_name FROM employees;
+    
+  -- Declaración de un tipo de tabla (colección) llamado "nt_fName"
+  TYPE nt_fName IS TABLE OF VARCHAR2(20);
+  
+  -- Declaración de una variable llamada "fname" de tipo "nt_fName" para almacenar los resultados
+  fname nt_fName;
+BEGIN
+  -- Abre el cursor "exp_cur" para permitir el acceso a los resultados de la consulta
+  OPEN exp_cur;
+
+  -- Recupera hasta 10 filas del cursor y las almacena en la colección "fname"
+  FETCH exp_cur BULK COLLECT INTO fname LIMIT 10;
+
+  -- Cierra el cursor "exp_cur" después de haber recuperado los datos
+  CLOSE exp_cur;
+
+  -- Itera a través de las filas en la colección "fname"
+  FOR idx IN 1 .. fname.COUNT
+  LOOP
+    -- Imprime el índice y el valor de cada fila en la colección
+    DBMS_OUTPUT.PUT_LINE (idx || ' ' || fname(idx));
+  END LOOP;
+END;
+-- Fin del bloque PL/SQL
