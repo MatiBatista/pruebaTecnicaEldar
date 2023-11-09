@@ -1,0 +1,31 @@
+
+Descripción del código:
+
+-El código presenta la declaración de una función llamada Get_salary que toma un parámetro P_Emp_id de tipo Number.
+
+-En la función, se declara una variable local llamada L_salary de tipo Number.
+
+-El objetivo de la función es seleccionar el salario (Salary) de la tabla Employees, donde el campo employee_id coincide con el valor de P_Emp_Id. Luego, almacena ese salario en la variable L_salary. Sin embargo, falta una declaración RETURN explícita al final de la función para devolver ese valor.
+
+-Como resultado de la falta de una declaración RETURN, la función no se compilará con éxito y generará un error en la etapa de compilación. La corrección requerida sería agregar "RETURN L_salary;" al final del bloque BEGIN para que la función compile con éxito y pueda devolver el valor buscado.
+
+
+Afirmaciones:
+
+-Le falta un retorno por lo que no compila:
+VERDADERO: La función declarada tiene un tipo de retorno definido como "Return Number," sin embargo, carece de una declaración RETURN explícita que devuelva un valor. Para que la función compile con éxito y pueda retornar un valor, es necesario agregar una declaración RETURN, como "RETURN L_salary;", al final del bloque BEGIN. La corrección requerida sería incluir "RETURN L_salary;" para garantizar que la función pueda devolver el valor almacenado en la variable L_salary al ser ejecutada.
+
+-Se compilará:
+FALSO: La función, debido a la falta de una declaración RETURN, no se compilará con éxito. El error de falta de retorno debe ser resuelto para que la función pueda compilarse correctamente. La corrección necesaria consiste en agregar "RETURN L_salary;" al final del bloque BEGIN para que la función pueda retornar el valor almacenado en la variable L_salary y compilar sin errores.
+
+-Devuelve el valor de P_Emp_Id:
+FALSO: La función no devuelve el valor de P_Emp_Id. En cambio, su propósito es buscar el salario del empleado cuyo employee_id coincide con P_Emp_Id y almacenar ese salario en la variable L_salary, pero no devuelve explícitamente ese valor. La función está diseñada para recuperar y almacenar el salario, pero no tiene una declaración RETURN que lo devuelva como resultado de la función.
+
+-Falta la sección de declaración:
+FALSO: La función incluye una sección de declaración en la forma de "L_salary Number," lo que indica que existe una sección de declaración en el código. La sección de declaración se utiliza para declarar la variable local L_salary de tipo Number que se utiliza posteriormente en la función. Por lo tanto, la función efectivamente contiene una sección de declaración.
+
+-Habrá un error en tiempo de ejecución:
+FALSO: Dado que la función no se compilará debido al error mencionado, no llegará a la etapa de tiempo de ejecución. El error de falta de declaración RETURN impide que la función sea compilada con éxito, por lo que no se ejecutará y, en consecuencia, no generará errores en tiempo de ejecución. La corrección necesaria debe abordarse durante la compilación para que la función pueda llegar a la etapa de tiempo de ejecución.
+
+
+
