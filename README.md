@@ -8,9 +8,7 @@ Para el ejercicio 2, se ha creado un Dockerfile para contenerizar la aplicación
 
 [**API REST del Ejercicio 2**](https://ejercicio2.onrender.com/)
 
-### Recurso de Obtención de Información de Operación mediante su ID
-
-Para permitirte probar el recurso solicitado, se han creado las 3 marcas, 3 tarjetas asociadas a cada marca y una operación por tarjeta en una base de datos en memoria llamada H2.
+### Recurso de Obtención de Tasa de una Operacion Mediante el Nombre de la Marca y el Monto
 
 **Endpoint solicitado:**
 
@@ -28,7 +26,7 @@ Para permitirte probar el recurso solicitado, se han creado las 3 marcas, 3 tarj
 }
 ```
 
--`Json respuesta:`-`Http status:200`
+-`Json respuesta:` -`Http status:200`
 
 ```json
 {
@@ -69,6 +67,10 @@ Para permitirte probar el recurso solicitado, se han creado las 3 marcas, 3 tarj
   "Mensaje": "Marca de tarjeta 'AR' no encontrada"
 }
 ```
+
+### Recurso de Obtención de Información de Operación mediante su ID
+
+Para permitirte probar el recurso solicitado, se han creado las 3 marcas, 3 tarjetas asociadas a cada marca y una operación por tarjeta en una base de datos en memoria llamada H2.
 
 **Endpoint para obtener datos de la operacion mediante su id:**
 
