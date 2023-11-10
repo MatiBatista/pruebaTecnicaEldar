@@ -14,6 +14,64 @@ Para permitirte probar el recurso solicitado, se han creado las 3 marcas, 3 tarj
 
 **Endpoint solicitado:**
 
+- **URL:** [https://ejercicio2.onrender.com/operacion/tasaOperacion](https://ejercicio2.onrender.com/operacion/tasaOperacion)
+- **Método:** GET
+
+**Respuestas esperadas:**
+
+-`Json enviado:`
+
+```json
+{
+  "nombreMarca": "AMEX",
+  "monto": 100
+}
+```
+
+-`Json respuesta:`-`Http status:200`
+
+```json
+{
+  "tasaDeOperacion": 1.1
+}
+```
+
+-`En caso de que el monto de la operacion supere los $1000:` -`Json enviado:`
+
+```json
+{
+  "nombreMarca": "AMEX",
+  "monto": 1001
+}
+```
+
+-`Json respuesta:` -`Http stauts:400`
+
+```json
+{
+  "Mensaje": "El monto de la operacion no puede superar los $1000"
+}
+```
+
+-`En caso de que se envie el nombre de una marca no existente:` -`Json enviado:`
+
+```json
+{
+  "nombreMarca": "AR",
+  "monto": 100
+}
+```
+
+-`Json respuesta:` -`Http stauts:404`
+
+```json
+{
+  "Mensaje": "Marca de tarjeta 'AR' no encontrada"
+}
+```
+
+**Endpoint para obtener datos de la operacion mediante su id:**
+
 - **URL:** [https://ejercicio2.onrender.com/operacion/{idOperacion}](https://ejercicio2.onrender.com/operacion/{idOperacion})
 - **Método:** GET
 
