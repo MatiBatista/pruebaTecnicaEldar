@@ -20,4 +20,12 @@ public class CustomErrorController {
         errorResponse.put("Mensaje", ex.getMessage());
         return errorResponse;
     }
+
+    @ExceptionHandler(ConsumoExcedidoException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String, String> handleConsumoExcedidoException(ConsumoExcedidoException ex) {
+        Map<String, String> errorResponse = new HashMap<>();
+        errorResponse.put("Mensaje", ex.getMessage());
+        return errorResponse;
+    }
 }
