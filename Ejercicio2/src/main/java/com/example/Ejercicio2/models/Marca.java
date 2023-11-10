@@ -32,6 +32,10 @@ public class Marca {
     private List<Tarjeta> tarjetas;
 
 
+    public Marca(String nombre, EstrategiasTasa estrategiaTasa){
+        this.nombre=nombre;
+        this.estrategiaTasa=estrategiaTasa;
+    }
     // Método para configurar la estrategia según su propio nombre
     public void configurarEstrategia() {
 
