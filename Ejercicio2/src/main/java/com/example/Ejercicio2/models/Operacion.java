@@ -1,5 +1,6 @@
 package com.example.Ejercicio2.models;
 
+import com.example.Ejercicio2.exceptions.ConsumoExcedidoException;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -30,5 +31,9 @@ public class Operacion {
         float importeInicial = this.getMonto();
         return importeInicial + (tasa / 100.0f * importeInicial);
 
+    }
+
+    static public boolean esValida(float unMonto){
+        return !(unMonto > 1000);
     }
 }
